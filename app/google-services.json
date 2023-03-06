@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "823949154414",
+    "project_id": "islamicfoundation-c3b65",
+    "storage_bucket": "islamicfoundation-c3b65.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:823949154414:android:878379958ae443072a6e7f",
+        "android_client_info": {
+          "package_name": "com.islamicfoundation.mbcmlp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "823949154414-rabbf18jh8ccbjujpe0qj5g6pggad7n1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6twBFglWCbD_iM-eHbFtR1UCx2wIJ0bA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "823949154414-rabbf18jh8ccbjujpe0qj5g6pggad7n1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
