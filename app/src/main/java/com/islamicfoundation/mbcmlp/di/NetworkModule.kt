@@ -30,16 +30,12 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideConnectivityInterceptor(
-        @ApplicationContext context: Context
-    ): ConnectivityInterceptor = ConnectivityInterceptorImpl(context)
+    fun provideConnectivityInterceptor(@ApplicationContext context: Context): ConnectivityInterceptor = ConnectivityInterceptorImpl(context)
 
     @Auth
     @Provides
     @Singleton
-    fun provideOkHttpClient(
-        connectivityInterceptor: ConnectivityInterceptor
-    ): OkHttpClient = OkHttpClient.Builder()
+    fun provideOkHttpClient(connectivityInterceptor: ConnectivityInterceptor): OkHttpClient = OkHttpClient.Builder()
         .addInterceptor(connectivityInterceptor)
         .build()
 
