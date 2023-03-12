@@ -28,7 +28,6 @@
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.Alet.NoActionBar">
-
         </activity>
         <activity
             android:name=".presentation.SplashActivity"
@@ -46,21 +45,15 @@
                 android:value="" />
         </activity>
 
-    <!--    <activity
+        <activity
             android:name="com.islamicfoundation.mbcmlp.presentation.activities.auth.AuthActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.Alet.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-        </activity>-->
+        </activity>
     </application>
 
 </manifest>

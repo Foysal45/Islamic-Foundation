@@ -9,7 +9,7 @@ import retrofit2.http.POST
 
 interface AuthApiService {
 
-    @POST("/api/auth/login")
+    @POST("/api/v1/admin/auth")
     suspend fun doSignIn(
         @Body body: LoginRequest
     ): Response<ResponseDTO<PayloadDto>>
