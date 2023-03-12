@@ -23,7 +23,6 @@ class LoginFragment : BaseFragment<LoginViewModel, FragmentLoginBinding>(
     @Inject
     lateinit var languageProvider: LanguageProvider
 
-    private var languageChangeListener: LanguageChangeListener? = null
     companion object {
         private const val TAG = "LoginFragment"
     }
@@ -31,19 +30,12 @@ class LoginFragment : BaseFragment<LoginViewModel, FragmentLoginBinding>(
 
     override fun initializeViewBinding(view: View) = FragmentLoginBinding.bind(view)
 
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        try {
-            languageChangeListener = context as LanguageChangeListener?
-        } catch (e: Exception) {
-            Log.e(TAG, "onAttach: ${e.message}")
-        }
-    }
+
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        getActivity()?. getWindow()?.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        activity?.window?.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN) //for FullScreen View Except appbar or title bar
 
         }
     }
