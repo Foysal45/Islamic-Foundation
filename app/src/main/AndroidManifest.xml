@@ -33,7 +33,7 @@
         <activity
             android:name=".presentation.splash.WelcomeActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.Alet.NoActionBar"
+            android:theme="@style/Theme.AppCompat.Mbcmlp.NoActionBar"
             tools:ignore="LockedOrientationActivity" >
         </activity>
 
