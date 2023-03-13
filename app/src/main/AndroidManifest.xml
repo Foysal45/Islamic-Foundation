@@ -29,6 +29,14 @@
             android:label="@string/app_name"
             android:theme="@style/Theme.Alet.NoActionBar">
         </activity>
+
+        <activity
+            android:name=".presentation.splash.WelcomeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Alet.NoActionBar"
+            tools:ignore="LockedOrientationActivity" >
+        </activity>
+
         <activity
             android:name=".presentation.splash.SplashActivity"
             android:exported="true"
@@ -54,6 +62,7 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
     </application>
 
 </manifest>

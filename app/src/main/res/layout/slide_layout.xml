@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="@dimen/_36sdp">
+
+    <ImageView
+        android:id="@+id/slide_img"
+        android:layout_width="wrap_content"
+        android:adjustViewBounds="true"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        app:srcCompat="@drawable/splash_gif_1" />
+
+    <TextView
+        android:id="@+id/slide_heading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/slide_img"
+        android:padding="@dimen/_16sdp"
+        android:text="Heading"
+        android:textAlignment="center"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/_16sdp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/slide_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/slide_img"
+        android:lineSpacingMultiplier="1.25"
+        android:padding="@dimen/_16sdp"
+        android:textAlignment="center"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/_12sdp"
+        tools:text="usmod tempor incididunt ut" />
+</RelativeLayout>
