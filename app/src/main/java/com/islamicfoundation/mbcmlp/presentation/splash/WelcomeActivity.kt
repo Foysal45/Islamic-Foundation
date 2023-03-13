@@ -1,16 +1,15 @@
 package com.islamicfoundation.mbcmlp.presentation.splash
 
-import android.content.Intent
 import android.os.Bundle
 import android.text.Html
 import android.view.View
 import android.view.WindowManager
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
 import com.islamicfoundation.mbcmlp.R
 import com.islamicfoundation.mbcmlp.databinding.ActivityWelcomeBinding
-import com.islamicfoundation.mbcmlp.presentation.activities.auth.AuthActivity
 
 class WelcomeActivity : AppCompatActivity() {
     val mdots = arrayOfNulls<TextView>(3)
@@ -21,10 +20,8 @@ class WelcomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityWelcomeBinding.inflate(layoutInflater)
-        setContentView(R.layout.activity_welcome)
+        setContentView(binding.root)
         this.window?.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN) //for FullScreen View Except appbar or title bar
-
-
 
         sliderAdapter = SliderAdapter(this)
         binding.viewpagerId.adapter = sliderAdapter
@@ -33,32 +30,26 @@ class WelcomeActivity : AppCompatActivity() {
         addDotsIndicator(0)
         binding.viewpagerId.addOnPageChangeListener(viewListener)
 
-        binding.nextBtn.setOnClickListener {
-            binding.viewpagerId.currentItem = mCurrentPage + 1
-        }
 
-        binding.skipBtn.setOnClickListener{
-            startActivity(Intent(this, AuthActivity::class.java))
-            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
-            this.finish()
-        }
+     /*   if (binding.nextBtn.text=="Let's Go!"){
+            binding.nextBtn.setOnClickListener {
+                startActivity(Intent(this, AuthActivity::class.java))
+                Toast.makeText(this,"clicked!", Toast.LENGTH_LONG).show()
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+                this.finish()
+            }
+        }*/
 
-        binding.startBtn.setOnClickListener{
-            startActivity(Intent(this, AuthActivity::class.java))
-            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
-            this.finish()
-        }
 
 
     }
-
     fun addDotsIndicator(position: Int) {
         binding.dotsLayout.removeAllViews()
         for (i in mdots.indices) {
             mdots[i] = TextView(this)
             mdots[i]!!.text = Html.fromHtml("&#8226")
             mdots[i]!!.textSize = 35f
-            mdots[i]!!.setTextColor(resources.getColor(R.color.colorBlack))
+            mdots[i]!!.setTextColor(resources.getColor(R.color.green))
             binding.dotsLayout.addView(mdots[i])
         }
         if (mdots.isNotEmpty()) mdots[position]!!.setTextColor(resources.getColor(R.color.colorWhite))
@@ -74,26 +65,36 @@ class WelcomeActivity : AppCompatActivity() {
             mCurrentPage = position
             when (position) {
                 0 -> {
-                    binding.startBtn.visibility = View.GONE
+                   // binding.startBtn.visibility = View.GONE
+                    binding.nextBtn.text = "Skip"
                     binding.nextBtn.visibility = View.VISIBLE
-                    binding.skipBtn.visibility = View.VISIBLE
                     binding.dotsLayout.visibility = View.VISIBLE
+
+                    binding.nextBtn.setOnClickListener {
+                       // Toast.makeText(this,"clicked!", Toast.LENGTH_LONG).show()
+                        binding.viewpagerId.currentItem = mCurrentPage + 1
+                    }
                 }
-                mdots.size - 1 -> {
-                    binding.startBtn.visibility = View.VISIBLE
-                    binding.nextBtn.visibility = View.GONE
-                    binding.skipBtn.visibility = View.GONE
-                    binding.dotsLayout.visibility = View.GONE
+                 1 -> {
+                    binding.nextBtn.text = "Skip"
+                    binding.nextBtn.visibility = View.VISIBLE
+                   // binding.skipBtn.visibility = View.GONE
+                    binding.dotsLayout.visibility = View.VISIBLE
+
+                     binding.nextBtn.setOnClickListener {
+                         binding.viewpagerId.currentItem = mCurrentPage + 1
+                     }
                 }
-                else -> {
-                    binding.nextBtn.text = "Next"
-                    binding.startBtn.visibility = View.GONE
+                2 -> {
+                    binding.nextBtn.text = "Let's Go!"
                     binding.dotsLayout.visibility = View.VISIBLE
                     binding.nextBtn.visibility = View.VISIBLE
-                    binding.skipBtn.visibility = View.VISIBLE
+
                 }
             }
+
         }
+
 
        override fun onPageScrollStateChanged(state: Int) {}
     }
