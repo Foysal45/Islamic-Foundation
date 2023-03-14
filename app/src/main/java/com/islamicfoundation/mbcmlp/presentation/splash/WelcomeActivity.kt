@@ -1,5 +1,6 @@
 package com.islamicfoundation.mbcmlp.presentation.splash
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.Html
 import android.view.View
@@ -10,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
 import com.islamicfoundation.mbcmlp.R
 import com.islamicfoundation.mbcmlp.databinding.ActivityWelcomeBinding
+import com.islamicfoundation.mbcmlp.presentation.activities.auth.AuthActivity
 
 class WelcomeActivity : AppCompatActivity() {
     val mdots = arrayOfNulls<TextView>(3)
@@ -31,64 +33,66 @@ class WelcomeActivity : AppCompatActivity() {
         binding.viewpagerId.addOnPageChangeListener(viewListener)
 
 
-     /*   if (binding.nextBtn.text=="Let's Go!"){
-            binding.nextBtn.setOnClickListener {
-                startActivity(Intent(this, AuthActivity::class.java))
-                Toast.makeText(this,"clicked!", Toast.LENGTH_LONG).show()
-                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
-                this.finish()
-            }
-        }*/
 
+        binding.letsGo.setOnClickListener {
+            startActivity(Intent(this, AuthActivity::class.java))
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+            this.finish()
+        }
+
+        binding.nextBtn.setOnClickListener {
+            startActivity(Intent(this, AuthActivity::class.java))
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+            this.finish()
+        }
 
 
     }
+
     fun addDotsIndicator(position: Int) {
         binding.dotsLayout.removeAllViews()
         for (i in mdots.indices) {
             mdots[i] = TextView(this)
             mdots[i]!!.text = Html.fromHtml("&#8226")
             mdots[i]!!.textSize = 35f
-            mdots[i]!!.setTextColor(resources.getColor(R.color.green))
+            mdots[i]!!.setTextColor(resources.getColor(R.color.colorGray))
             binding.dotsLayout.addView(mdots[i])
         }
-        if (mdots.isNotEmpty()) mdots[position]!!.setTextColor(resources.getColor(R.color.colorWhite))
+        if (mdots.isNotEmpty()) mdots[position]!!.setTextColor(resources.getColor(R.color.green))
     }
 
 
+    private var viewListener: ViewPager.OnPageChangeListener = object : ViewPager.OnPageChangeListener {
 
-    var viewListener: ViewPager.OnPageChangeListener = object : ViewPager.OnPageChangeListener {
+        override fun onPageScrolled(
+            position: Int,
+            positionOffset: Float,
+            positionOffsetPixels: Int
+        ) {
+        }
 
-        override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {}
         override fun onPageSelected(position: Int) {
             addDotsIndicator(position)
             mCurrentPage = position
             when (position) {
                 0 -> {
-                   // binding.startBtn.visibility = View.GONE
+                    // binding.startBtn.visibility = View.GONE
                     binding.nextBtn.text = "Skip"
                     binding.nextBtn.visibility = View.VISIBLE
                     binding.dotsLayout.visibility = View.VISIBLE
+                    binding.letsGo.visibility = View.GONE
 
-                    binding.nextBtn.setOnClickListener {
-                       // Toast.makeText(this,"clicked!", Toast.LENGTH_LONG).show()
-                        binding.viewpagerId.currentItem = mCurrentPage + 1
-                    }
                 }
-                 1 -> {
+                1 -> {
                     binding.nextBtn.text = "Skip"
                     binding.nextBtn.visibility = View.VISIBLE
-                   // binding.skipBtn.visibility = View.GONE
                     binding.dotsLayout.visibility = View.VISIBLE
-
-                     binding.nextBtn.setOnClickListener {
-                         binding.viewpagerId.currentItem = mCurrentPage + 1
-                     }
+                    binding.letsGo.visibility = View.GONE
                 }
                 2 -> {
-                    binding.nextBtn.text = "Let's Go!"
                     binding.dotsLayout.visibility = View.VISIBLE
-                    binding.nextBtn.visibility = View.VISIBLE
+                    binding.nextBtn.visibility = View.GONE
+                    binding.letsGo.visibility = View.VISIBLE
 
                 }
             }
@@ -96,7 +100,7 @@ class WelcomeActivity : AppCompatActivity() {
         }
 
 
-       override fun onPageScrollStateChanged(state: Int) {}
+        override fun onPageScrollStateChanged(state: Int) {}
     }
 
 }
