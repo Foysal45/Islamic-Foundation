@@ -17,10 +17,10 @@ class SplashActivity : AppCompatActivity() {
 
         Handler().postDelayed(
             {
-                startActivity(Intent(this, AuthActivity::class.java))
+                startActivity(Intent(this, WelcomeActivity::class.java))
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
                 this.finish()
-            }, 3100
+            }, 600
         )
     }
 }

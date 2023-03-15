@@ -4,6 +4,7 @@ import com.android.build.gradle.BaseExtension
 import org.gradle.api.plugins.ExtensionAware
 import org.jetbrains.kotlin.gradle.dsl.KotlinJvmOptions
 import com.android.build.gradle.internal.tasks.factory.dependsOn
+import javax.swing.text.View
 
 fun Project.setupCommonDependencies() {
     dependencies {
@@ -52,3 +53,4 @@ fun Project.generateNavArgsProguardRules() {
             )
     }
 }
+

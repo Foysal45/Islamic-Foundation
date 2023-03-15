@@ -44,6 +44,7 @@
     <color name="colorShimmer">#dddddd</color>
     <color name="colorYellow">#FFC107</color>
     <color name="colorGrey">#8C8981</color>
+    <color name="drawer">#084E0B</color>
 
     <color name="gray_200">#4De0e0e0</color>
     <color name="black_80">#CC000000</color>

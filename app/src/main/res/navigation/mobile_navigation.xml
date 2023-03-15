@@ -22,4 +22,12 @@
         android:name="com.islamicfoundation.mbcmlp.presentation.fragment.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
+    <activity
+        android:id="@+id/splashActivity"
+        android:name="com.islamicfoundation.mbcmlp.presentation.splash.SplashActivity"
+        android:label="SplashActivity" />
+    <activity
+        android:id="@+id/welcomeActivity"
+        android:name="com.islamicfoundation.mbcmlp.presentation.splash.WelcomeActivity"
+        android:label="WelcomeActivity" />
 </navigation>
