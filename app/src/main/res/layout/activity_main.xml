@@ -26,5 +26,15 @@
         app:itemIconTint="@color/white"
         app:itemIconSize="@dimen/_15sdp"
         app:headerLayout="@layout/nav_header_main"
-        app:menu="@menu/activity_main_drawer" />
+        app:menu="@menu/activity_main_drawer">
+
+    <!--<ExpandableListView
+        android:id="@+id/nav_expandable_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:groupIndicator="@null"
+        />-->
+   </com.google.android.material.navigation.NavigationView>
+
+
 </androidx.drawerlayout.widget.DrawerLayout>
