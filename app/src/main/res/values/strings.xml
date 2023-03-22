@@ -14,4 +14,8 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="en">En</string>
     <string name="bn">Bn</string>
+
+    <string-array name="invigilator_district">
+        <item>পরিদর্শনের জেলাঃ</item>
+    </string-array>
 </resources>
