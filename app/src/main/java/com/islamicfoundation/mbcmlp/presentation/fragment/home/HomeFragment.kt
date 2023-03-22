@@ -12,6 +12,7 @@ import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
 import com.github.mikephil.charting.utils.ColorTemplate
 import com.islamicfoundation.mbcmlp.databinding.FragmentHomeBinding
+import kotlin.collections.ArrayList
 
 
 class HomeFragment : Fragment() {
@@ -28,7 +29,37 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        barChart()
+        barChartForLastSevenDaysVisitEducationCentre()
+
+        barChartForLastSevenDaysVisitResourceCentre()
+
+
+
+    }
+
+    private fun barChartForLastSevenDaysVisitEducationCentre(){
+
+        binding?.barChartLastSevenDaysVisitEducationCentre?.setDrawBarShadow(false)
+        binding?.barChartLastSevenDaysVisitEducationCentre?.setDrawValueAboveBar(true)
+        binding?.barChartLastSevenDaysVisitEducationCentre?.setMaxVisibleValueCount(50)
+        binding?.barChartLastSevenDaysVisitEducationCentre?.setPinchZoom(false)
+        binding?.barChartLastSevenDaysVisitEducationCentre?.setDrawGridBackground(true)
+        binding?.barChartLastSevenDaysVisitEducationCentre?.description?.isEnabled = false
+        binding?.barChartLastSevenDaysVisitEducationCentre?.animateY(2000)
+
+        val xAxis = binding?.barChartLastSevenDaysVisitEducationCentre?.xAxis
+        xAxis?.position = XAxis.XAxisPosition.BOTTOM
+        xAxis?.setDrawGridLines(false)
+        xAxis?.granularity = 1f
+        xAxis?.labelCount = 5
+
+        val leftAxis = binding?.barChartLastSevenDaysVisitEducationCentre?.axisLeft
+        leftAxis?.setDrawGridLines(true)
+        leftAxis?.spaceTop = 30f
+        leftAxis?.axisMinimum = 0f
+
+        val rightAxis = binding?.barChartLastSevenDaysVisitEducationCentre?.axisRight
+        rightAxis?.isEnabled = false
 
         val entries: MutableList<BarEntry> = ArrayList()
         entries.add(BarEntry(1f, 1f))
@@ -39,40 +70,77 @@ class HomeFragment : Fragment() {
         entries.add(BarEntry(6f, 6f))
         entries.add(BarEntry(7f, 7f))
 
-        val dataSet = BarDataSet(entries, "My Bar Chart")
+        val dataSet = BarDataSet(entries, "গত সাত দিনে পরিদর্শিত শিক্ষা কেন্দ্র")
         dataSet.setColors(*ColorTemplate.COLORFUL_COLORS)
         dataSet.setDrawValues(true)
         dataSet.valueTextColor = Color.DKGRAY
         dataSet.valueTextSize = 10f
 
         val data = BarData(dataSet)
-        binding?.barChart?.setData(data)
-        binding?.barChart?.invalidate();
-
+        binding?.barChartLastSevenDaysVisitEducationCentre?.data = data
+        binding?.barChartLastSevenDaysVisitEducationCentre?.invalidate()
     }
 
-    fun barChart(){
 
-        binding?.barChart?.setDrawBarShadow(false)
-        binding?.barChart?.setDrawValueAboveBar(true)
-        binding?.barChart?.setMaxVisibleValueCount(50)
-        binding?.barChart?.setPinchZoom(false)
-        binding?.barChart?.setDrawGridBackground(true)
+    private fun barChartForLastSevenDaysVisitResourceCentre(){
 
-        val xAxis = binding?.barChart?.xAxis
+        binding?.barChartLastSevenDaysVisitResourceCentre?.setDrawBarShadow(true)
+        binding?.barChartLastSevenDaysVisitResourceCentre?.setDrawValueAboveBar(true)
+        binding?.barChartLastSevenDaysVisitResourceCentre?.setMaxVisibleValueCount(50)
+        binding?.barChartLastSevenDaysVisitResourceCentre?.setPinchZoom(false)
+        binding?.barChartLastSevenDaysVisitResourceCentre?.setDrawGridBackground(true)
+        binding?.barChartLastSevenDaysVisitResourceCentre?.description?.isEnabled = false
+        binding?.barChartLastSevenDaysVisitResourceCentre?.animateY(2000)
+        binding?.barChartLastSevenDaysVisitResourceCentre?.notifyDataSetChanged()
+
+        val xAxis = binding?.barChartLastSevenDaysVisitResourceCentre?.xAxis
         xAxis?.position = XAxis.XAxisPosition.BOTTOM
         xAxis?.setDrawGridLines(false)
         xAxis?.granularity = 1f
         xAxis?.labelCount = 5
 
-        val leftAxis = binding?.barChart?.axisLeft
-        leftAxis?.setDrawGridLines(true)
-        leftAxis?.spaceTop = 30f
-        leftAxis?.axisMinimum = 0f
+        val leftAxis = binding?.barChartLastSevenDaysVisitResourceCentre?.axisLeft
+        leftAxis?.setDrawGridLines(false)
+        leftAxis?.setDrawGridLines(false)
+        leftAxis?.isEnabled = false
+        //leftAxis?.spaceTop = 0f
+        //leftAxis?.axisMinimum = 0f
 
-        val rightAxis = binding?.barChart?.axisRight
+      /*  leftAxis?.valueFormatter = object : ValueFormatter() {
+            override fun getFormattedValue(value: Float): String {
+                // You can return any text you want here based on the value
+                return "okey"
+            }
+        }
+*/
+        val rightAxis = binding?.barChartLastSevenDaysVisitResourceCentre?.axisRight
         rightAxis?.isEnabled = false
+
+        val entries: MutableList<BarEntry> = ArrayList()
+        entries.add(BarEntry(1f, 1f))
+        entries.add(BarEntry(2f, 2f))
+        entries.add(BarEntry(3f, 3f))
+        entries.add(BarEntry(4f, 4f))
+        entries.add(BarEntry(5f, 5f))
+        entries.add(BarEntry(6f, 6f))
+        entries.add(BarEntry(7f, 7f))
+
+
+
+        val dataSet = BarDataSet(entries, "My Bar Chart")
+        dataSet.setColors(*ColorTemplate.COLORFUL_COLORS)
+        dataSet.setDrawValues(true)
+        dataSet.valueTextColor = Color.DKGRAY
+        dataSet.valueTextSize = 12f
+
+
+        val data = BarData(dataSet)
+        binding?.barChartLastSevenDaysVisitResourceCentre?.data = data
+        binding?.barChartLastSevenDaysVisitResourceCentre?.invalidate()
+
+
     }
+
 
     override fun onDestroyView() {
         super.onDestroyView()
