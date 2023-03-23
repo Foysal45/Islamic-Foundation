@@ -20,6 +20,14 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="custom_spinner_style" parent="Widget.AppCompat.Light.DropDownItem.Spinner">
+
+        <item name="android:paddingStart">4dp</item>
+        <item name="android:paddingEnd">0dp</item>
+        <item name="android:textColor">@color/colorText_primary</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
     <style name="Theme.AppCompat.Mbcmlp.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.AppCompat.Mbcmlp.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />

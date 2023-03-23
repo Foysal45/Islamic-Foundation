@@ -10,4 +10,7 @@
     <color name="black_00">#88252424</color>
     <color name="white">#FFFFFFFF</color>
     <color name="gray_200">#7EE0E0E0</color>
+    <color name="gray_500">#999999</color>
+    <color name="page_title">#066E38</color>
+    <color name="colorText_primary">#565B65</color>
 </resources>
