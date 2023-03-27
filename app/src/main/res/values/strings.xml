@@ -32,6 +32,31 @@
         <item>কেন্দ্রের ধরনঃ</item>
     </string-array>
 
+    <string-array name="subject_bangla">
+        <item>বাংলা</item>
+    </string-array>
+
+    <string-array name="subject_english">
+        <item>ইংরেজি</item>
+    </string-array>
+
+    <string-array name="subject_mathematics">
+        <item>গণিত</item>
+    </string-array>
+
+    <string-array name="subject_islamic">
+        <item>কায়দা ও আমপারা / কায়দা ও দ্বীনি শিক্ষাঃ</item>
+    </string-array>
+
+    <string-array name="subject_practical">
+        <item>ব্যবহারিক তথ্যবার্তা</item>
+    </string-array>
+
+
+    <string-array name="subject_quran">
+        <item>সহজ কুরআন শিক্ষা</item>
+    </string-array>
+
 
 
 </resources>

@@ -282,6 +282,7 @@
                     app:layout_constraintTop_toBottomOf="@id/centreCode_name_spinner_layout"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/teacher_name_layout"
                     android:background="@drawable/bg_stroke_spinner_background">
 
                     <androidx.appcompat.widget.AppCompatSpinner
@@ -309,6 +310,613 @@
                         tools:ignore="ContentDescription" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/teacher_name_layout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/centre_type_layout"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/teacher_educational_qualification_layout"
+                    android:layout_marginTop="10dp"
+                    android:hint="শিক্ষকের নামঃ">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/teacher_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:enabled="true"
+                        android:imeOptions="actionNext"
+                        android:importantForAutofill="no"
+                        android:inputType="text"
+                        android:textColor="@color/black_80"
+                        android:textSize="14sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/teacher_educational_qualification_layout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/teacher_name_layout"
+                    app:layout_constraintBottom_toTopOf="@id/number_of_students_present_layout"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="10dp"
+                    android:hint="শিক্ষকের শিক্ষাগত যোগ্যতাঃ">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/teacher_educational_qualification"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:enabled="true"
+                        android:imeOptions="actionNext"
+                        android:importantForAutofill="no"
+                        android:inputType="text"
+                        android:textColor="@color/black_80"
+                        android:textSize="14sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/number_of_students_present_layout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/teacher_educational_qualification_layout"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/invigilator_number_layout"
+                    android:layout_marginTop="10dp"
+                    android:hint="উপস্থিত শিক্ষার্থীর সংখ্যাঃ">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/number_of_students_present"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:enabled="true"
+                        android:imeOptions="actionNext"
+                        android:importantForAutofill="no"
+                        android:inputType="text"
+                        android:textColor="@color/black_80"
+                        android:textSize="14sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/invigilator_number_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/number_of_students_present_layout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/advances_in_education_layout"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:background="@drawable/bg_stroke_spinner_background"
+                android:visibility="visible"
+                android:layout_marginTop="15dp">
+
+                <TextView
+                    android:id="@+id/invigilator_number_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:text="পরিদর্শন সংখ্যা "
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textStyle="normal"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_margin="10dp"
+                    app:layout_constraintBottom_toTopOf="@+id/head_office_layout"
+                    tools:ignore="RtlCompat">
+                </TextView>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/head_office_layout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/invigilator_number_title"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/divisional_director_layout"
+                    android:layout_marginTop="10dp"
+                    android:layout_margin="10dp"
+                    android:hint="প্রধান কার্যালয়ঃ">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/head_office_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:enabled="true"
+                        android:imeOptions="actionNext"
+                        android:importantForAutofill="no"
+                        android:inputType="text"
+                        android:textColor="@color/black_80"
+                        android:textSize="14sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/divisional_director_layout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/head_office_layout"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/sub_director_layout"
+                    android:layout_margin="10dp"
+                    android:hint="বিভাগীয় পরিচালকঃ">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/divisional_director_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:enabled="true"
+                        android:imeOptions="actionNext"
+                        android:importantForAutofill="no"
+                        android:inputType="text"
+                        android:textColor="@color/black_80"
+                        android:textSize="14sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/sub_director_layout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/divisional_director_layout"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/assistant_director_layout"
+                    android:layout_margin="10dp"
+                    android:hint="উপ-পরিচালকঃ">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/sub_director_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:enabled="true"
+                        android:imeOptions="actionNext"
+                        android:importantForAutofill="no"
+                        android:inputType="text"
+                        android:textColor="@color/black_80"
+                        android:textSize="14sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/assistant_director_layout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/sub_director_layout"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/field_supervisor_layout"
+                    android:layout_margin="10dp"
+                    android:hint="সহকারী পরিচালকঃ">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/assistant_director_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:enabled="true"
+                        android:imeOptions="actionNext"
+                        android:importantForAutofill="no"
+                        android:inputType="text"
+                        android:textColor="@color/black_80"
+                        android:textSize="14sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/field_supervisor_layout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/assistant_director_layout"
+                    app:layout_constraintBottom_toTopOf="@+id/model_caretaker_or_other_layout"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_margin="10dp"
+                    android:hint="ফিল্ড সুপারভাইজারঃ">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/field_supervisor_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:enabled="true"
+                        android:imeOptions="actionNext"
+                        android:importantForAutofill="no"
+                        android:inputType="text"
+                        android:textColor="@color/black_80"
+                        android:textSize="14sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/model_caretaker_or_other_layout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/field_supervisor_layout"
+                    app:layout_constraintBottom_toTopOf="@+id/number_of_central_monitoring_committee_layout"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_margin="10dp"
+                    android:hint="মডেল কেয়ারটেকার/অন্যান্যঃ">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/model_caretaker_or_other_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:enabled="true"
+                        android:imeOptions="actionNext"
+                        android:importantForAutofill="no"
+                        android:inputType="text"
+                        android:textColor="@color/black_80"
+                        android:textSize="14sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/number_of_central_monitoring_committee_layout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/model_caretaker_or_other_layout"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:paddingBottom="10dp"
+                    android:layout_margin="10dp"
+                    android:hint="কেন্দ্র মনিটরিং কমিটির সংখ্যাঃ">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/number_of_central_monitoring_committee"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:enabled="true"
+                        android:imeOptions="actionNext"
+                        android:importantForAutofill="no"
+                        android:inputType="text"
+                        android:textColor="@color/black_80"
+                        android:textSize="14sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/advances_in_education_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/invigilator_number_layout"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/center_invigilation_enquiry_layout"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:background="@drawable/bg_stroke_spinner_background"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:id="@+id/advances_in_education_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:gravity="center"
+                        android:text="শিক্ষার অগ্রগতি"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textStyle="normal"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_margin="10dp"
+                        tools:ignore="RtlCompat">
+                    </TextView>
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layout_bangla"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_margin="10dp"
+                        app:layout_constraintTop_toBottomOf="@id/advances_in_education_title"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toTopOf="@+id/layout_english"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:background="@drawable/bg_stroke_spinner_background">
+
+                        <androidx.appcompat.widget.AppCompatSpinner
+                            android:id="@+id/spinner_bangla"
+                            android:layout_width="0dp"
+                            android:layout_height="48dp"
+                            android:overlapAnchor="false"
+                            android:spinnerMode="dropdown"
+                            android:background="@drawable/bg_stroke_spinner_background"
+                            android:theme="@style/custom_spinner_style"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            android:entries="@array/subject_bangla" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            app:layout_constraintBottom_toBottomOf="@id/spinner_bangla"
+                            app:layout_constraintEnd_toEndOf="@id/spinner_bangla"
+                            app:layout_constraintTop_toTopOf="@id/spinner_bangla"
+                            app:srcCompat="@drawable/spinner_arrow_drop_down"
+                            tools:ignore="ContentDescription" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layout_english"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_margin="10dp"
+                        app:layout_constraintTop_toBottomOf="@id/layout_bangla"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toTopOf="@+id/layout_mathematics"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:background="@drawable/bg_stroke_spinner_background">
+
+                        <androidx.appcompat.widget.AppCompatSpinner
+                            android:id="@+id/spinner_english"
+                            android:layout_width="0dp"
+                            android:layout_height="48dp"
+                            android:overlapAnchor="false"
+                            android:spinnerMode="dropdown"
+                            android:background="@drawable/bg_stroke_spinner_background"
+                            android:theme="@style/custom_spinner_style"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            android:entries="@array/subject_english" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            app:layout_constraintBottom_toBottomOf="@id/spinner_english"
+                            app:layout_constraintEnd_toEndOf="@id/spinner_english"
+                            app:layout_constraintTop_toTopOf="@id/spinner_english"
+                            app:srcCompat="@drawable/spinner_arrow_drop_down"
+                            tools:ignore="ContentDescription" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layout_mathematics"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_margin="10dp"
+                        app:layout_constraintTop_toBottomOf="@id/layout_english"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toTopOf="@+id/layout_kayda_ampara"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:background="@drawable/bg_stroke_spinner_background">
+
+                        <androidx.appcompat.widget.AppCompatSpinner
+                            android:id="@+id/spinner_mathematics"
+                            android:layout_width="0dp"
+                            android:layout_height="48dp"
+                            android:overlapAnchor="false"
+                            android:spinnerMode="dropdown"
+                            android:background="@drawable/bg_stroke_spinner_background"
+                            android:theme="@style/custom_spinner_style"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            android:entries="@array/subject_mathematics" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            app:layout_constraintBottom_toBottomOf="@id/spinner_mathematics"
+                            app:layout_constraintEnd_toEndOf="@id/spinner_mathematics"
+                            app:layout_constraintTop_toTopOf="@id/spinner_mathematics"
+                            app:srcCompat="@drawable/spinner_arrow_drop_down"
+                            tools:ignore="ContentDescription" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layout_kayda_ampara"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_margin="10dp"
+                        app:layout_constraintTop_toBottomOf="@id/layout_mathematics"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toTopOf="@+id/layout_practical_imformation"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:background="@drawable/bg_stroke_spinner_background">
+
+                        <androidx.appcompat.widget.AppCompatSpinner
+                            android:id="@+id/spinner_kayda_ampara"
+                            android:layout_width="0dp"
+                            android:layout_height="48dp"
+                            android:overlapAnchor="false"
+                            android:spinnerMode="dropdown"
+                            android:background="@drawable/bg_stroke_spinner_background"
+                            android:theme="@style/custom_spinner_style"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            android:entries="@array/subject_islamic" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            app:layout_constraintBottom_toBottomOf="@id/spinner_kayda_ampara"
+                            app:layout_constraintEnd_toEndOf="@id/spinner_kayda_ampara"
+                            app:layout_constraintTop_toTopOf="@id/spinner_kayda_ampara"
+                            app:srcCompat="@drawable/spinner_arrow_drop_down"
+                            tools:ignore="ContentDescription" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layout_practical_imformation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_margin="10dp"
+                        app:layout_constraintTop_toBottomOf="@id/layout_kayda_ampara"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toTopOf="@+id/layout_easy_quran_learning"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:background="@drawable/bg_stroke_spinner_background">
+
+                        <androidx.appcompat.widget.AppCompatSpinner
+                            android:id="@+id/spinner_practical_imformation"
+                            android:layout_width="0dp"
+                            android:layout_height="48dp"
+                            android:overlapAnchor="false"
+                            android:spinnerMode="dropdown"
+                            android:background="@drawable/bg_stroke_spinner_background"
+                            android:theme="@style/custom_spinner_style"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            android:entries="@array/subject_practical" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            app:layout_constraintBottom_toBottomOf="@id/spinner_practical_imformation"
+                            app:layout_constraintEnd_toEndOf="@id/spinner_practical_imformation"
+                            app:layout_constraintTop_toTopOf="@id/spinner_practical_imformation"
+                            app:srcCompat="@drawable/spinner_arrow_drop_down"
+                            tools:ignore="ContentDescription" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layout_easy_quran_learning"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_margin="10dp"
+                        app:layout_constraintTop_toBottomOf="@id/layout_practical_imformation"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:background="@drawable/bg_stroke_spinner_background">
+
+                        <androidx.appcompat.widget.AppCompatSpinner
+                            android:id="@+id/spinner_easy_quran_learning"
+                            android:layout_width="0dp"
+                            android:layout_height="48dp"
+                            android:overlapAnchor="false"
+                            android:spinnerMode="dropdown"
+                            android:background="@drawable/bg_stroke_spinner_background"
+                            android:theme="@style/custom_spinner_style"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            android:entries="@array/subject_quran" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            app:layout_constraintBottom_toBottomOf="@id/spinner_easy_quran_learning"
+                            app:layout_constraintEnd_toEndOf="@id/spinner_easy_quran_learning"
+                            app:layout_constraintTop_toTopOf="@id/spinner_easy_quran_learning"
+                            app:srcCompat="@drawable/spinner_arrow_drop_down"
+                            tools:ignore="ContentDescription" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/center_invigilation_enquiry_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="12dp"
+                    app:layout_constraintTop_toBottomOf="@id/advances_in_education_layout">
+
+                    <TextView
+                        android:id="@+id/center_invigilation_enquiry"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="এই কেন্দ্রটা গতমাসে কেয়ারটেকার পরিদর্শন করেছেন কিনা?"
+                        android:textColor="@color/black_80"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <RadioGroup
+                        android:id="@+id/shopOwnershipInBusinessRadioGroup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/center_invigilation_enquiry">
+
+                        <RadioButton
+                            android:id="@+id/yes_radio_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="হ্যাঁ" />
+
+                        <RadioButton
+                            android:id="@+id/no_radio_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:text="না" />
+
+                    </RadioGroup>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
