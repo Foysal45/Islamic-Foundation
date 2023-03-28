@@ -57,6 +57,10 @@
         <item>সহজ কুরআন শিক্ষা</item>
     </string-array>
 
+    <string-array name="spinner_caretaker">
+        <item>কেয়ারটেকার</item>
+    </string-array>
+
 
 
 </resources>
